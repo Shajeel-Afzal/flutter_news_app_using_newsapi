@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_news_app_using_newsapi/NewsModel.dart';
+import 'package:flutter_news_app_using_newsapi/api_keys.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
@@ -37,7 +38,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
 
   Future<List<NewsModel>> getNewFromApi() async {
     var url =
-        'https://newsapi.org/v2/top-headlines?pageSize=100&country=us&apiKey=[NEWSAPI_API_KEY]';
+        "https://newsapi.org/v2/top-headlines?pageSize=100&country=us&apiKey=${ApiKeys.newApiKey}";
 
     var myUri = Uri.parse(url);
 
@@ -69,7 +70,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
         NewsModel myModel = NewsModel(
             title: articleTitle,
             source: source,
-            urlToImage: article["urlToImage"]);
+            urlToImage: article["urlToImage"] ?? "");
 
         newsList.add(myModel);
       }
