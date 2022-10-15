@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_news_app_using_newsapi">
+    package="com.shajeelafzal.newsapp">
    <application
         android:label="flutter_news_app_using_newsapi"
         android:name="${applicationName}"
